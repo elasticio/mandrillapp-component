@@ -1,0 +1,31 @@
+{
+    "title": "Mandrill",
+    "description": "Mandrill is a scalable and affordable email infrastructure service.",
+    "credentials": {
+        "fields": {
+            "apiKey": {
+                "label": "API key",
+                "required": true,
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "actions": {
+        "sendTemplate": {
+            "main": "./lib/actions/sendTemplate.js",
+            "title": "Send Template",
+            "fields": {
+                "templateName": {
+                    "label": "Template",
+                    "required": true,
+                    "viewClass": "SelectView",
+                    "model": "getTemplateModel",
+                    "prompt":"Select Template"
+                }
+            },
+            "metadata": {
+                "out": {}
+            }
+        }
+    }
+}
