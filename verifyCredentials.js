@@ -1,12 +1,12 @@
 "use strict";
-const client = require('./lib/client.js');
+const mandrill = require('./lib/mandrill.js');
 
 module.exports = verify;
 
 function verify(credentials) {
     console.log('About to verify given API key by retrieving user from Mandrill');
 
-    const client = client.create(credentials);
+    const client = mandrill.createClient(credentials);
 
     return new Promise((resolve, reject) => {
         client.users.info({}, resolve, reject);
