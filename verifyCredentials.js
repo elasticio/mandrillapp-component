@@ -9,7 +9,7 @@ function verify(credentials) {
     const client = client.create(credentials);
 
     return new Promise((resolve, reject) => {
-        return client.users.info({}, resolve, reject);
+        client.users.info({}, resolve, reject);
     }).then((result) => {
         console.log('Your username: %s. API key is valid.', result.username);
         return result;
