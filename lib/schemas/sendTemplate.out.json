@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": false,
+      "title": "Email"
+    },
+    "status": {
+      "type": "string",
+      "required": false,
+      "title": "Status"
+    },
+    "reject_reason": {
+      "type": "string",
+      "required": false,
+      "title": "Reject Reason"
+    },
+    "_id": {
+      "type": "string",
+      "required": false,
+      "title": "ID"
+    }
+  }
+}

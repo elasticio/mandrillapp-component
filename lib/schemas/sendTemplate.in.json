@@ -1,0 +1,219 @@
+{
+  "type": "object",
+  "properties": {
+    "template_content": {
+      "type": "string",
+      "required": false,
+      "maxLength": 1024,
+      "title": "Template Content"
+    },
+    "from_name": {
+      "type": "string",
+      "required": false,
+      "title": "From Name"
+    },
+    "message": {
+      "type": "object",
+      "properties": {
+        "ip_pool": {
+          "type": "string",
+          "required": false,
+          "title": "IP Pool"
+        },
+        "async": {
+          "title": "Async",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Yes",
+            "No"
+          ]
+        },
+        "html": {
+          "type": "string",
+          "required": false,
+          "title": "HTML"
+        },
+        "text": {
+          "type": "string",
+          "required": false,
+          "title": "Text"
+        },
+        "subject": {
+          "type": "string",
+          "required": false,
+          "title": "Subject"
+        },
+        "from_email": {
+          "type": "string",
+          "required": false,
+          "title": "From Email"
+        },
+        "to": {
+          "type": "array",
+          "properties": {
+            "email": {
+              "type": "string",
+              "required": true,
+              "title": "To Email"
+            },
+            "name": {
+              "type": "string",
+              "required": false,
+              "title": "To Name"
+            },
+            "type": {
+              "type": "string",
+              "required": false,
+              "title": "To Type"
+            }
+          }
+        },
+        "headers": {
+          "type": "object",
+          "properties": {
+            "Reply-To": {
+              "type": "string",
+              "required": false,
+              "title": "Reply - To"
+            }
+          }
+        },
+        "important": {
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Yes",
+            "No"
+          ],
+          "title": "Important"
+        },
+        "track_opens": {
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Yes",
+            "No"
+          ],
+          "title": "Track Opens"
+        },
+        "track_clicks": {
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Yes",
+            "No"
+          ],
+          "title": "Track Clicks"
+        },
+        "auto_text": {
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Yes",
+            "No"
+          ],
+          "title": "Auto Text"
+        },
+        "auto_html": {
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Yes",
+            "No"
+          ],
+          "title": "Auto HTML"
+        },
+        "inline_css": {
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Yes",
+            "No"
+          ],
+          "title": "Inline CSS"
+        },
+        "url_strip_qs": {
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Yes",
+            "No"
+          ],
+          "title": "URL Strip QS"
+        },
+        "preserve_recipients": {
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Yes",
+            "No"
+          ],
+          "title": "Preserve Recipients"
+        },
+        "view_content_link": {
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Yes",
+            "No"
+          ],
+          "title": "View Content Link"
+        },
+        "bcc_address": {
+          "type": "string",
+          "required": false,
+          "title": "BCC Address"
+        },
+        "tracking_domain": {
+          "type": "string",
+          "required": false,
+          "title": "Tracking Domain"
+        },
+        "signing_domain": {
+          "type": "string",
+          "required": false,
+          "title": "Signing Domain"
+        },
+        "return_path_domain": {
+          "type": "string",
+          "required": false,
+          "title": "Return Path Domain"
+        },
+        "google_analytics_domains": {
+          "type": "string",
+          "required": false,
+          "title": "Google Analytics Domains (coma as separator)"
+        },
+        "tags": {
+          "type": "string",
+          "required": false,
+          "title": "Tags (coma as separator)"
+        },
+        "google_analytics_campaign": {
+          "type": "string",
+          "required": false,
+          "title": "Google Analytics Campaign"
+        },
+        "images": {
+          "type": "string",
+          "required": false,
+          "maxLength": 1024,
+          "title": "Images"
+        },
+        "attachments": {
+          "type": "string",
+          "required": false,
+          "maxLength": 1024,
+          "title": "Attachments"
+        },
+        "global_merge_vars": {
+          "type": "string",
+          "required": false,
+          "maxLength": 1024,
+          "title": "Global Merge Vars"
+        }
+      }
+    }
+  }
+}
