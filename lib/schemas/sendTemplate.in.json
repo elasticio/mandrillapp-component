@@ -1,17 +1,6 @@
 {
   "type": "object",
   "properties": {
-    "template_content": {
-      "type": "string",
-      "required": false,
-      "maxLength": 1024,
-      "title": "Template Content"
-    },
-    "from_name": {
-      "type": "string",
-      "required": false,
-      "title": "From Name"
-    },
     "message": {
       "type": "object",
       "properties": {
@@ -48,6 +37,11 @@
           "type": "string",
           "required": false,
           "title": "From Email"
+        },
+        "from_name": {
+          "type": "string",
+          "required": false,
+          "title": "From Name"
         },
         "to": {
           "type": "array",
@@ -194,24 +188,6 @@
           "type": "string",
           "required": false,
           "title": "Google Analytics Campaign"
-        },
-        "images": {
-          "type": "string",
-          "required": false,
-          "maxLength": 1024,
-          "title": "Images"
-        },
-        "attachments": {
-          "type": "string",
-          "required": false,
-          "maxLength": 1024,
-          "title": "Attachments"
-        },
-        "global_merge_vars": {
-          "type": "string",
-          "required": false,
-          "maxLength": 1024,
-          "title": "Global Merge Vars"
         }
       }
     }
