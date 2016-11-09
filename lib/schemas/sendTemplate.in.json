@@ -190,7 +190,7 @@
           "title": "Google Analytics Campaign"
         },
         "metadata": {
-          "type": "object",
+          "type": "string",
           "required": false,
           "title": "Metadata"
         }
