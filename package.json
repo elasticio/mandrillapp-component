@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "elastic.io component for the Mandrill API",
   "scripts": {
-    "test": "exit 0"
+    "test": "jasmine-node --test-dir spec"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,9 @@
     "mandrill-api": "^1.0.45",
     "request": "2.76.0",
     "request-promise": "4.1.1"
+  },
+  "devDependencies": {
+    "jasmine-node": "~1.7.0",
+    "nock": "^9.0.2"
   }
 }
