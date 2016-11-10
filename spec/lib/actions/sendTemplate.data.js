@@ -76,14 +76,9 @@ module.exports = {
             }
         }
     },
-    incomeMsg: {
+    incomeMsgWithMetadata: {
         body: {
-            "from_name": "artem",
-            "mapped_merge_vars": {
-                username: 'super',
-                data: 'super-data'
-            },
-            "message": {
+            message: {
                 "url_strip_qs": "Yes",
                 "view_content_link": "No",
                 "track_opens": "Yes",
@@ -94,11 +89,11 @@ module.exports = {
                 "auto_text": "Yes",
                 "auto_html": "Yes",
                 "subject": "testing",
+                "from_name": "artem",
                 "from_email": "asci@yandex.ru",
                 "tags": "welcome, intro",
                 "google_analytics_domains": "elastic.io",
                 "google_analytics_campaign": "TransactionalEmail",
-                "attachments": "[{\"type\": \"text/plain\", \"name\": \"mytext.txt\", \"content\": \"TG9yZW0gaXBzdW0=\"}]",
                 "to": [
                     {
                         "type": "to",
@@ -106,9 +101,13 @@ module.exports = {
                         "email": "some@awesome.kz"
                     }
                 ],
-                "global_merge_vars": "[{\"name\" : \"SIGNATURE\", \"content\":\"King Kong\"}]",
-                "async": true
-            }
+                "async": true,
+                "metadata": "{\"name\" : \"Homer Simpson\", \"color\":\"yellow\"}"
+            },
+            "mapped_merge_vars": {
+                username: 'super',
+                data: 'super-data'
+            },
         }
     },
     processedMessageWoGlobal: {
@@ -183,6 +182,52 @@ module.exports = {
                     "content": "super-data"
                 }
             ]
+        }
+    },
+    processedMessageWithMetadata: {
+        "template_name": "sobaka",
+        "message": {
+            "url_strip_qs": true,
+            "view_content_link": false,
+            "track_opens": true,
+            "track_clicks": true,
+            "preserve_recipients": false,
+            "inline_css": false,
+            "important": false,
+            "auto_text": true,
+            "auto_html": true,
+            "subject": "testing",
+            "from_name": "artem",
+            "from_email": "asci@yandex.ru",
+            "tags": [
+                "welcome",
+                "intro"
+            ],
+            "google_analytics_domains": [
+                "elastic.io"
+            ],
+            "google_analytics_campaign": "TransactionalEmail",
+            "to": [
+                {
+                    "type": "to",
+                    "name": "kzname",
+                    "email": "some@awesome.kz"
+                }
+            ],
+            "global_merge_vars": [
+                {
+                    "name": "username",
+                    "content": "super"
+                },
+                {
+                    "name": "data",
+                    "content": "super-data"
+                }
+            ],
+            metadata : {
+                name : 'Homer Simpson',
+                color : 'yellow'
+            }
         }
     },
     errResp: {

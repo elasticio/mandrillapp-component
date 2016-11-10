@@ -13,6 +13,13 @@ describe('sendTemplate', function () {
     };
 
     describe('action', function () {
+        it('should prepare message data for mapping without global vars', function () {
+            var result = createParams(data.incomeMsgNewWoGlobal, {templateName: 'sobaka'});
+            expect(result.message).toEqual(data.processedMessageWoGlobal.message);
+            expect(result.template_name).toEqual(data.processedMessageWoGlobal.template_name);
+            expect(result.async).toEqual(false);
+        });
+
         it('should prepare message data', function () {
             var result = createParams(data.incomeMsgNew, {templateName: 'sobaka'});
             expect(result.message).toEqual(data.processedMessage.message);
@@ -20,10 +27,10 @@ describe('sendTemplate', function () {
             expect(result.async).toEqual(false);
         });
 
-        it('should prepare message data for mapping without global vars', function () {
-            var result = createParams(data.incomeMsgNewWoGlobal, {templateName: 'sobaka'});
-            expect(result.message).toEqual(data.processedMessageWoGlobal.message);
-            expect(result.template_name).toEqual(data.processedMessageWoGlobal.template_name);
+        it('should prepare message data with metadata', function () {
+            var result = createParams(data.incomeMsgWithMetadata, {templateName: 'sobaka'});
+            expect(result.message).toEqual(data.processedMessageWithMetadata.message);
+            expect(result.template_name).toEqual(data.processedMessageWithMetadata.template_name);
             expect(result.async).toEqual(false);
         });
 
