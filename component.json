@@ -22,7 +22,7 @@
                 }
             },
             "metadata": {
-                "out": "./schemas/receiveWebhookEvents.out.json"
+                "out": "./lib/schemas/receiveWebhookEvents.out.json"
             }
         }
     },
