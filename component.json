@@ -10,6 +10,22 @@
             }
         }
     },
+    "triggers": {
+        "receiveWebhookEvents": {
+            "main": "./lib/triggers/receiveWebhookEvents.js",
+            "title": "Receive Webhook Events",
+            "fields": {
+                "url": {
+                    "viewClass": "WebHookURLView",
+                    "label": "WebHook URL",
+                    "required": false
+                }
+            },
+            "metadata": {
+                "out": "./schemas/receiveWebhookEvents.out.json"
+            }
+        }
+    },
     "actions": {
         "sendTemplate": {
             "main": "./lib/actions/sendTemplate.js",
