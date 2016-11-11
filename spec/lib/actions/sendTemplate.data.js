@@ -239,7 +239,12 @@ module.exports = {
     goodResp: [{
         "email": "recipient.email@example.com",
         "status": "sent",
-        "reject_reason": "hard-bounce",
+        "_id": "abc123abc123abc123abc123abc123"
+    }],
+    rejectedResponse: [{
+        "email": "recipient.email@example.com",
+        "status": "rejected",
+        "reject_reason":"invalid-sender",
         "_id": "abc123abc123abc123abc123abc123"
     }]
 };

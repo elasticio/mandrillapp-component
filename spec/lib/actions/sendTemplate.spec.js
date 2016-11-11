@@ -68,10 +68,37 @@ describe('sendTemplate', function () {
                 });
 
                 runs(function () {
-                    expect(result.body).toEqual(data.goodResp);
+                    expect(result.body).toEqual(data.goodResp[0]);
                 });
 
             });
+
+            it('should send message and emit error on rejected status', function () {
+                spyOn(sendTemplate, 'createParams').andReturn({});
+
+                nock('https://mandrillapp.com:443')
+                    .post('/api/1.0/messages/send-template.json')
+                    .reply(200, data.rejectedResponse);
+
+                let result;
+
+                runs(function () {
+                    action.call(self, msg, cfg)
+                        .catch((e)=> {
+                            result = e;
+                        });
+                });
+
+                waitsFor(function () {
+                    return !!result;
+                });
+
+                runs(function () {
+                    expect(result.message).toEqual('{"email":"recipient.email@example.com","status":"rejected","reject_reason":"invalid-sender","_id":"abc123abc123abc123abc123abc123"}');
+                });
+
+            });
+
             it('should handle error response', function () {
                 spyOn(sendTemplate, 'createParams').andReturn({});
 
