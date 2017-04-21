@@ -14,13 +14,6 @@
         "receiveWebhookEvents": {
             "main": "./lib/triggers/receiveWebhookEvents.js",
             "title": "Receive Webhook Events",
-            "fields": {
-                "url": {
-                    "viewClass": "WebHookURLView",
-                    "label": "WebHook URL",
-                    "required": false
-                }
-            },
             "metadata": {
                 "out": "./lib/schemas/receiveWebhookEvents.out.json"
             }
