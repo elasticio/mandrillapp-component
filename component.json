@@ -15,10 +15,19 @@
             "main": "./lib/triggers/receiveWebhookEvents.js",
             "title": "Receive Webhook Events",
             "fields": {
-                "url": {
-                    "viewClass": "WebHookURLView",
-                    "label": "WebHook URL",
-                    "required": false
+                "domain": {
+                    "viewClass": "TextFieldView",
+                    "label": "Inbound Domain",
+                    "required": true,
+                    "placeholder": "m.yourdomain.com",
+                    "note": "An existing inbound domain that is configured and validated in Mandrill"
+                },
+                "domain": {
+                    "viewClass": "TextFieldView",
+                    "label": "Mailbox patter",
+                    "required": true,
+                    "placeholder": "mailbox-*",
+                    "note": "The search pattern that the mailbox name should match"
                 }
             },
             "metadata": {
