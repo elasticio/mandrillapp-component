@@ -22,7 +22,7 @@
                     "placeholder": "m.yourdomain.com",
                     "note": "An existing inbound domain that is configured and validated in Mandrill"
                 },
-                "domain": {
+                "pattern": {
                     "viewClass": "TextFieldView",
                     "label": "Mailbox patter",
                     "required": true,
