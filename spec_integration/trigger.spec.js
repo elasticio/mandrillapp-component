@@ -17,6 +17,7 @@ describe('Given integration test environment', () => {
     const apiKey = process.env.MANDRILL_API_KEY;
     const pattern = 'integration-test-' + new Date().getMilliseconds();
     const domain = 'm.elastic.io';
+    let hookID;
 
     before(function () {
         if (!apiKey) {throw new Error('Please set MANDRILL_API_KEY env variable to proceed');}
@@ -29,6 +30,15 @@ describe('Given integration test environment', () => {
         return trigger.startup({apiKey,domain,pattern}).then((result) => {
             console.log('Done', result);
             assert.isOk(result.id);
+            hookID = result.id;
+        })
+    }).timeout(5000);
+
+    it('shutdown should remove created inbound route', () => {
+        return trigger.shutdown({apiKey,domain,pattern}, {id: hookID}).then((result) => {
+            console.log('Remove done', result);
+            assert.isOk(result.id);
+            assert.equal(result.id, hookID);
         })
     }).timeout(5000);
 
