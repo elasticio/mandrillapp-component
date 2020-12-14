@@ -1,4 +1,5 @@
 'use strict';
+const logger = require('@elastic.io/component-logger')();
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 
@@ -39,6 +40,7 @@ describe('Given trigger function', () => {
     it('should process events', () => {
         const message = require('./data/other.sample.json');
         const emitter = new TestEmitter();
+        emitter.logger = logger;
         return trigger.process.call(emitter, message).then(() => {
             expect(emitter.data.length).to.be.equal(1);
         });
@@ -49,6 +51,7 @@ describe('Given trigger function', () => {
             foo: 123
         });
         const emitter = new TestEmitter();
+        emitter.logger = logger;
         return assert.isRejected(trigger.process.call(emitter, message));
     });
 
