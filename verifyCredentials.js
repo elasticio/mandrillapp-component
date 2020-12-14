@@ -9,7 +9,7 @@ function verify(credentials) {
     return new Promise((resolve, reject) => {
         client.users.info({}, resolve, reject);
     }).then((result) => {
-        that.logger.info('Your username: %s. API key is valid.');
+        that.logger.info('API key is valid.');
         return result;
     });
 }
