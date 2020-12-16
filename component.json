@@ -7,7 +7,7 @@
             "apiKey": {
                 "label": "API key",
                 "required": true,
-                "viewClass": "TextFieldView"
+                "viewClass": "PasswordFieldView"
             }
         }
     },
