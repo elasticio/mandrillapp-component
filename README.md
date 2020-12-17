@@ -1,4 +1,4 @@
-# mssql-component [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# Mandrill [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 elastic.io component for the Mandrill API
 
@@ -12,10 +12,11 @@ For authentication you would need a Mandrill API key. You can find it (or genera
 
 ### Inbound e-mail trigger
 
-Intbound e-mail trigger can receive e-mails that are sent to mandrill inbox(es), it uses [Webhooks API](https://mandrill.zendesk.com/hc/en-us/articles/205583217-Introduction-to-Webhooks).
+Intbound e-mail trigger can receive e-mails that are sent to mandrill inbox(es), it uses [Webhooks API](https://mandrill.zendesk.com/hc/en-us/articles/360038739814).
 
 You have following configuration parameters:
-![image](https://user-images.githubusercontent.com/56208/29976062-08b3b23a-8f39-11e7-9ca5-67ce4e1e55bc.png)
+![image](https://user-images.githubusercontent.com/36419533/102479003-fcf9c000-4066-11eb-89b8-4d33d48efb3b.png)
+
 
 
 
