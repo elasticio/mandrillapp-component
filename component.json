@@ -1,12 +1,13 @@
 {
     "title": "Mandrill",
     "description": "Mandrill is a scalable and affordable email infrastructure service.",
+    "buildType":"docker",
     "credentials": {
         "fields": {
             "apiKey": {
                 "label": "API key",
                 "required": true,
-                "viewClass": "TextFieldView"
+                "viewClass": "PasswordFieldView"
             }
         }
     },

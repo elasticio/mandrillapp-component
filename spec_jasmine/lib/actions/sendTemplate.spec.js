@@ -1,3 +1,5 @@
+const logger = require('@elastic.io/component-logger')();
+
 describe('sendTemplate', function () {
     var sendTemplate = require('../../../lib/actions/sendTemplate.js');
     var action = sendTemplate.process;
@@ -14,21 +16,33 @@ describe('sendTemplate', function () {
 
     describe('action', function () {
         it('should prepare message data for mapping without global vars', function () {
-            var result = createParams(data.incomeMsgNewWoGlobal, {templateName: 'sobaka'});
+            var result = createParams.call({
+                logger
+            }, data.incomeMsgNewWoGlobal, {
+                templateName: 'sobaka'
+            });
             expect(result.message).toEqual(data.processedMessageWoGlobal.message);
             expect(result.template_name).toEqual(data.processedMessageWoGlobal.template_name);
             expect(result.async).toEqual(false);
         });
 
         it('should prepare message data', function () {
-            var result = createParams(data.incomeMsgNew, {templateName: 'sobaka'});
+            var result = createParams.call({
+                logger
+            }, data.incomeMsgNew, {
+                templateName: 'sobaka'
+            });
             expect(result.message).toEqual(data.processedMessage.message);
             expect(result.template_name).toEqual(data.processedMessage.template_name);
             expect(result.async).toEqual(false);
         });
 
         it('should prepare message data with metadata', function () {
-            var result = createParams(data.incomeMsgWithMetadata, {templateName: 'sobaka'});
+            var result = createParams.call({
+                logger
+            }, data.incomeMsgWithMetadata, {
+                templateName: 'sobaka'
+            });
             expect(result.message).toEqual(data.processedMessageWithMetadata.message);
             expect(result.template_name).toEqual(data.processedMessageWithMetadata.template_name);
             expect(result.async).toEqual(false);
@@ -40,6 +54,7 @@ describe('sendTemplate', function () {
 
             beforeEach(function () {
                 self = jasmine.createSpyObj('self', ['emit']);
+                self.logger = logger;
                 msg = {
                     body: {
                         message: data.incomeMsgNew
@@ -182,7 +197,11 @@ describe('sendTemplate', function () {
 
             nock('https://mandrillapp.com:443')
                 .post('/api/1.0/templates/list.json')
-                .reply(200, [{name: 'sobaka'}, {name: 'kot'}]);
+                .reply(200, [{
+                    name: 'sobaka'
+                }, {
+                    name: 'kot'
+                }]);
 
             let result;
 
@@ -198,7 +217,9 @@ describe('sendTemplate', function () {
             });
 
             runs(function () {
-                expect(result).toEqual({ sobaka : 'sobaka', kot : 'kot' } );
+                expect(result).toEqual({
+                    sobaka: 'sobaka', kot: 'kot'
+                });
             });
 
         });
