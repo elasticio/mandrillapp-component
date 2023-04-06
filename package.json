@@ -1,6 +1,5 @@
 {
   "name": "@elasticio/mandrill-component",
-  "version": "0.0.2",
   "description": "elastic.io component for the Mandrill API",
   "homepage": "https://www.elastic.io",
   "author": {
